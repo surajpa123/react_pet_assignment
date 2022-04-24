@@ -1,0 +1,10 @@
+.maindiv{
+    margin: auto;
+    width: 50%;
+
+    margin-top: 5%;
+    text-align: center;
+}
+tr{
+    border: 1px solid teal;
+}
