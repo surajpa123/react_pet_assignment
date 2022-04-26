@@ -8,11 +8,12 @@ import style from "../Components/home.css"
 import { Link } from 'react-router-dom';
 import {useSelector,useDispatch} from "react-redux"
 import {get_data} from "../Redux/action"
+
  
 export  const Home = ()=> {
  const dispatch = useDispatch()
     const datas = useSelector((store)=>
-    store.data
+    store.isAuth
  )
  
  console.log("HOmes",datas)
@@ -24,8 +25,6 @@ export  const Home = ()=> {
 
     React.useEffect(()=>{
         getdata()
-      
-      
     },[name])
 
     const handelSort = ()=>{
@@ -102,7 +101,13 @@ console.log(data)
    <Button variant='contained' onClick={handelSort}>Sort by name</Button>
       <br />
       <br />
+
+      <Link to={"/login"}>Login Admin</Link>
+      <br />
+      <br />
    <Link to={"/create"}><Button variant="outlined">Add New Pet</Button></Link> 
+
+   
     <br />
     <br />
     <Container maxWidth="sm" marginTop="10px">
