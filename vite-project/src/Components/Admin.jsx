@@ -12,18 +12,20 @@ const dispatch = useDispatch()
 
   const [data,setdata] = useState()
 
-//   const tokenstore = useSelector((store)=>
-//   store.Token
-// )
-
 const IsAuth = useSelector((store)=>
 store.isAuth
 )
 
+React.useEffect(()=>{
+  if(!IsAuth){
+    navi("/login")
+  }
+})
+
+console.log("HOmes",IsAuth)
 const logout = useSelector((store)=>
 store
 )
-
 
 const deletedata = (id) => {
 console.log(id)
@@ -32,18 +34,6 @@ console.log(id)
     getdata()
   })
 }
-
-
-
-
-
-console.log("HOmes",IsAuth)
-React.useEffect(()=>{
- if(!IsAuth){
-   navi("/login")
- }
-
-},[])
 
 React.useEffect(()=>{
   getdata()
@@ -55,17 +45,10 @@ const getdata = ()=>{
       setdata(res.data)
   })
 }
-
-
 const home = ()=>{
  dispatch(log_out())
  navi("/")
 }
-
-
-
-
-
 
   return (
 
@@ -90,7 +73,6 @@ const home = ()=>{
            <th scope="col">Verified</th>
            <th scope="col">Rating</th>
            <th scope="col">Update</th>
-
            <th scope="col">Delete</th>
        </tr>
    </thead>

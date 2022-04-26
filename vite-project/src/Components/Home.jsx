@@ -38,7 +38,6 @@ export  const Home = ()=> {
                 }
                 return 0
             })
-
             console.log("Data",data)
             // get_data()
             sets(false)
@@ -52,12 +51,9 @@ export  const Home = ()=> {
                 return 0
             })
             sets(true)
-            
         }
      
         setdata(alld)
-
-        
       }
 
    

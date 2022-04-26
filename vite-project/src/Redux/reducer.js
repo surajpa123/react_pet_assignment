@@ -7,7 +7,7 @@ import { log_out } from "./action";
 import { IS_AUTH } from "./action";
 const initState = {
     data:[],
-    Token:[],
+    Token:"",
     isAuth:false
 }
 
@@ -19,9 +19,8 @@ export const reducer = (store = initState,{type,payload})=>{
             return({...store,data:payload})
             case Token :
               return({...store,Token:payload, isAuth:true})
-              
                   case LOG_OUT:
-                      return ({data:[],Token:[], isAuth:false})
+                      return ({data:[],Token:"", isAuth:false})
             default:
                 return store;
     }

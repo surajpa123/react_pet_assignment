@@ -34,7 +34,7 @@ const {id} = useParams()
     }
   return (
       <>
-    <div className='maindiv'><h2>Add_pet</h2>
+    <div className='maindiv'><h2>Update</h2>
 <br />
     <form class="row g-3 " onSubmit={handelSubmit}>
     <label htmlFor="">Name</label>
